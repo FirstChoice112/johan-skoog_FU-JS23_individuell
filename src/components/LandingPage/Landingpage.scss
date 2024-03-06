@@ -1,0 +1,66 @@
+@import "../Sassy/variables";
+@import url("https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap");
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+.card__wrapper {
+  @include flexCenter(row);
+  width: 375px;
+  height: 655px;
+  position: relative;
+  background-color: $LandingBg;
+  font-family: "Work Sans", sans-serif;
+  .wrapper__image--left,
+  .wrapper__image--right {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .wrapper__image--right {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .wrapper__image--left img,
+  .wrapper__image--right img {
+    height: 655px;
+    position: relative;
+  }
+  .hero__section {
+    height: 149px;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .hero__symbol {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      background-color: rgba(76, 144, 123);
+      border-radius: 32px;
+      align-self: center;
+      padding: 10px;
+    }
+    h1 {
+      color: rgba(255, 255, 255, 1);
+      font-family: "Rufina", serif;
+      font-size: 42px;
+      margin-bottom: 0;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    .hero__text {
+      font-family: "Work Sans", sans-serif;
+      font-size: 9px;
+      line-height: 10.56px;
+      color: rgba(255, 255, 255, 1);
+      letter-spacing: 3px;
+    }
+  }
+}

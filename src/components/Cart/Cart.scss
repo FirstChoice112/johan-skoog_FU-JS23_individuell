@@ -1,0 +1,94 @@
+@import "../Sassy/mixins";
+@import "../Sassy/variables";
+
+.card__wrapper--cart {
+  @include flexCenter(column);
+  height: 655px;
+  width: 375px;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+.cart__wrapper {
+  height: 565.06px;
+  width: 341px;
+  background-color: white;
+  border-radius: 3px;
+  position: absolute;
+  margin-top: 75px;
+
+  h2 {
+    font-family: "PT Serif", serif;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    color: rgba(47, 41, 38, 1);
+  }
+  .orderline {
+    width: 296px;
+    height: 40px;
+    margin-left: 10px;
+  }
+  h3 {
+    font-family: "PT Serif", serif;
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-left: 10px;
+    color: rgba(47, 41, 38, 1);
+  }
+
+  p {
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    line-height: 15.6px;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: rgba(47, 41, 38, 1);
+  }
+  .rightSide__wrapper {
+    margin-left: 285px;
+    margin-top: -70px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rightSide__btn {
+    padding: 0;
+    border: none;
+    background-color: rgba(255, 255, 255, 1);
+    margin-bottom: 0;
+    margin-top: -4px;
+    margin-bottom: -4px;
+  }
+  .rightSide__btn--quantity {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: end;
+    margin-right: 20px;
+  }
+  .wrapper__total {
+    margin-top: 100px;
+    margin-bottom: 30px;
+  }
+  .finale__line {
+    margin-right: 75px;
+    margin-left: 60px;
+    margin-top: -5px;
+  }
+  .total__cost {
+    display: flex;
+    flex-direction: column;
+    padding-left: 250px;
+    margin-top: -32px;
+  }
+  .wrapper__button {
+    display: flex;
+    justify-content: center;
+  }
+  .dotted__line {
+    height: 0.2px;
+    width: 150px;
+    margin-left: 120px;
+    margin-top: -7px;
+  }
+}

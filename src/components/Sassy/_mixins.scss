@@ -1,0 +1,19 @@
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+// @include flexCenter(column);
+
+@mixin buttonCenter($background, $text) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $background;
+  color: $text;
+}
+// @include buttonCenter(black, white)
+@mixin changeBackgroundColor($backgroundColor) {
+  background-color: $backgroundColor;
+}

@@ -1,0 +1,96 @@
+@import "../Sassy/mixins";
+@import "../Sassy/variables";
+
+.card__wrapper--profile {
+  @include flexCenter(column);
+  justify-content: flex-start;
+  height: 667px;
+  width: 375px;
+  background-color: $SecondaryBackround;
+
+  .section__img--profile {
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-family: "PT Serif", serif;
+    color: rgba(255, 255, 255, 1);
+    font-size: 24px;
+    line-height: 28.8px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  a {
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    line-height: 16.8px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+  }
+  h2 {
+    font-family: "PT Serif", serif;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 1);
+    align-self: flex-start;
+    margin-left: 27px;
+    margin-bottom: 10px;
+    margin-top: 70px;
+  }
+  .section__lower {
+    width: 315px;
+    display: flex;
+    flex-direction: row;
+    .right,
+    .left {
+      width: 50%;
+    }
+    .p__orderNumber {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      // font-weight: 700;
+      margin-bottom: 0;
+    }
+    .dateOfPurchase {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      margin-bottom: 0;
+      margin-left: 107px;
+    }
+    .total__sum--text {
+      font-family: "Work Sans", sans-serif;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 12px;
+      margin-top: 0;
+    }
+    .summa__total {
+      font-family: "Work Sans", sans-serif;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 12px;
+      margin-top: 0;
+      margin-left: 120px;
+    }
+  }
+  .total__cost {
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .total__cost__sum {
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-left: 153px;
+  }
+  .Thin__Line {
+    background-color: rgba(255, 255, 255, 0.08);
+    width: 100%;
+    height: 1px;
+  }
+  .Thic__Line {
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 315px;
+    height: 1px;
+  }
+}

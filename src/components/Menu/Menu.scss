@@ -1,0 +1,60 @@
+@import "../Sassy/mixins";
+@import "../Sassy/variables";
+
+.card__wrapper--menu {
+  @include flexCenter(column);
+  background-color: $PrimaryBackround;
+  height: 839px;
+  width: 375px;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  h2 {
+    font-family: "PT Serif", serif;
+    font-weight: 700;
+    font-size: 42px;
+    margin-top: -40px;
+    display: flex;
+    align-self: center;
+    margin-bottom: 0;
+  }
+  .menu__product--name {
+    font-family: "PT Serif", serif;
+    font-weight: 700;
+    font-size: 23px;
+    color: rgba(47, 41, 38, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 60px;
+    margin-top: -65px;
+  }
+  .menu__product--description {
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 60px;
+  }
+  .section__menu--row {
+    width: 311px;
+    height: 64px;
+  }
+  .menu__button {
+    padding: 0;
+    border: none;
+    background-color: $PrimaryBackround;
+    margin-top: -50px;
+  }
+  .menu__product--price {
+    font-family: "PT Serif", serif;
+    font-weight: 700;
+    font-size: 23px;
+    color: rgba(47, 41, 38, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: -45px;
+  }
+}

@@ -1,0 +1,50 @@
+@import "../Sassy/mixins";
+@import "../Sassy/variables";
+
+.card__wrapper--status {
+  @include flexCenter(column);
+  height: 667px;
+  width: 375px;
+  background-color: $StatusBg;
+  color: rgba(255, 255, 255, 1);
+
+  .orderNumber__text {
+    background-color: $StatusBg;
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    margin-bottom: 50px;
+    margin-top: -100px;
+    .orderNumber--number {
+      font-weight: 700;
+    }
+  }
+  h3 {
+    height: 125px;
+    width: 279px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0;
+    font-family: "PT Serif", serif;
+    font-size: 36px;
+  }
+  p {
+    font-family: "Work Sans", sans-serif;
+    font-size: 21px;
+    margin-top: 0;
+    .minutes {
+      font-size: 22px;
+      line-height: 26.4px;
+      font-weight: bolder;
+    }
+  }
+  img {
+    width: 216.29px;
+    height: 119.06px;
+    background-color: $StatusBg;
+  }
+  .secondary {
+    margin-top: 120px;
+    padding: 10px 35px;
+  }
+}

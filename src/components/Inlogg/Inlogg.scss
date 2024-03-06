@@ -1,0 +1,117 @@
+@import "../Sassy/mixins";
+@import "../Sassy/variables";
+
+.card__wrapper--inlogg {
+  @include flexCenter(column);
+  justify-content: space-between;
+  height: 667px;
+  width: 375px;
+  background-color: $SecondaryBackround;
+
+  .section__inlogg {
+    position: relative;
+    top: -20px;
+    height: 565.06px;
+    width: 341px;
+    background-color: $PrimaryBackround;
+    border-radius: 3px;
+  }
+  .logo__img {
+    color: $SecondaryBackround;
+    display: flex;
+    border-radius: 20px;
+    margin-left: 150px;
+    margin-top: 25px;
+  }
+
+  h3 {
+    font-family: "PT Serif", serif;
+    font-size: 32px;
+    text-align: center;
+    line-height: 38.4px;
+    margin-bottom: 0;
+    margin-top: 5px;
+  }
+  p {
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    text-align: center;
+    line-height: 24px;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    margin-left: 17px;
+    width: 305px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .named__form {
+    display: flex;
+    flex-direction: column;
+    width: 310px;
+    label {
+      font-family: "Work Sans", sans-serif;
+      font-size: 12px;
+      color: rgba(47, 41, 38, 1);
+      margin-bottom: 5px;
+    }
+  }
+  form input {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 37px;
+    border-radius: 4px;
+    border-color: rgba(47, 41, 38, 1);
+    background-color: $PrimaryBackround;
+  }
+  form input::placeholder {
+    color: rgba(47, 41, 38, 1);
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    line-height: 19.2px;
+    padding: 12px;
+  }
+  .email__form {
+    // display: flex;
+    flex-direction: column;
+    width: 310px;
+    label {
+      font-family: "Work Sans", sans-serif;
+      font-size: 12px;
+      color: rgba(47, 41, 38, 1);
+      margin-bottom: 5px;
+      margin-top: 10px;
+    }
+  }
+  .gdpr {
+    display: flex;
+
+    button {
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      background-color: rgba(14, 146, 125, 1);
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    p {
+      font-family: "Work Sans", sans-serif;
+      font-size: 12px;
+      margin-top: 15px;
+      margin-right: 232px;
+    }
+  }
+  .inlogg__button {
+    display: flex;
+    justify-content: center;
+
+    Button {
+      padding: 30px;
+      padding-top: 12px;
+      padding-bottom: 15px;
+    }
+  }
+}

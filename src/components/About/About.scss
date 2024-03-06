@@ -1,0 +1,55 @@
+@import "../Sassy/mixins";
+@import "../Sassy/variables";
+
+.card__wrapper--about {
+  @include flexCenter(column);
+  background-color: $PrimaryBackround;
+  height: 1061px;
+  width: 375px;
+  justify-content: space-between;
+  font-family: "PT Serif", serif;
+  h2 {
+    font-size: 42px;
+    width: 311px;
+    margin-bottom: 0px;
+  }
+  .section__text {
+    width: 311px;
+    height: 584px;
+  }
+
+  .section__text--highlighted {
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    line-height: 22.4px;
+    font-weight: 600;
+  }
+  .section__text--normalText {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 19.2px;
+  }
+  .section__founder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .section__founder--image {
+    width: 74px;
+    height: 74px;
+    background-color: $PrimaryBackround;
+    border-radius: 37px;
+  }
+  .section__founder--name {
+    font-size: 22px;
+    line-height: 35.2px;
+    margin: 0;
+  }
+  .section__founder--workrole {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 19.2px;
+    margin: 0;
+  }
+}
