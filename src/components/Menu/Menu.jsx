@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import Menu_Button from "../../assets/images/Menu/Menu_Button.png";
 import "./Menu.scss";
 import { useEffect, useState } from "react";
+import useCounterStore from "../../store/Store";
 
 const BASE_URL = "https://airbean-api-xjlcn.ondigitalocean.app/api/beans/";
 
@@ -37,6 +38,12 @@ export default function FetchMenu() {
 }
 
 function Menu({ menuItems }) {
+  const incrementCount = useCounterStore((state) => state.increment);
+
+  const handleButtonClick = () => {
+    incrementCount();
+  };
+
   return (
     <div className="card__wrapper--menu">
       <Header backgroundColor="$PrimaryBackround: rgb(243, 228, 225)" />
@@ -44,7 +51,11 @@ function Menu({ menuItems }) {
       <br />
       <section>
         {menuItems.map((menuItem, index) => (
-          <MenuItem key={index} menuItem={menuItem} />
+          <MenuItem
+            key={index}
+            menuItem={menuItem}
+            onClick={handleButtonClick}
+          />
         ))}
       </section>
       <Footer />
@@ -52,10 +63,10 @@ function Menu({ menuItems }) {
   );
 }
 
-function MenuItem({ menuItem }) {
+function MenuItem({ menuItem, onClick }) {
   return (
     <div className="section__menu--row">
-      <button className="menu__button">
+      <button className="menu__button" onClick={onClick}>
         <img src={Menu_Button} alt="Menu Button" />
       </button>
       <span className="menu__product--name">{menuItem.title}</span>

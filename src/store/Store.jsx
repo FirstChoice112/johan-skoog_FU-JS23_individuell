@@ -1,5 +1,6 @@
-import { createStore } from "zustand";
-const useCounterStore = createStore((set) => ({
+import { create } from "zustand";
+
+const useCounterStore = create((set) => ({
   count: 0,
   // Funktion för att öka räknaren
   increment: () => set((state) => ({ count: state.count + 1 })),

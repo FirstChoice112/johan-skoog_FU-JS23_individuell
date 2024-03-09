@@ -1,7 +1,10 @@
 import "./Header.scss";
 import PropTypes from "prop-types";
+import useCounterStore from "../../store/Store";
 
 export default function Header({ backgroundColor }) {
+  const count = useCounterStore((state) => state.count);
+
   return (
     <>
       <div className="wrapper__header" style={{ backgroundColor }}>
@@ -10,7 +13,7 @@ export default function Header({ backgroundColor }) {
             src="src\assets\images\Header\Header_Orders.png"
             alt="Bild för antal"
           />
-          <span>0</span>
+          <span>{count}</span>
         </div>
         <img src="src\assets\images\Header\Header_bg.png" />
         <button className="btn__burger" alt="Hamburarmeny">
