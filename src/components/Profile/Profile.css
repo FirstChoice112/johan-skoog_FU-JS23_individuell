@@ -1,0 +1,93 @@
+.card__wrapper--profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 667px;
+  width: 375px;
+  background-color: rgb(47, 41, 38);
+}
+.card__wrapper--profile .section__img--profile {
+  margin-left: 50px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.card__wrapper--profile h3 {
+  font-family: "PT Serif", serif;
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  line-height: 28.8px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.card__wrapper--profile a {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  line-height: 16.8px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+.card__wrapper--profile h2 {
+  font-family: "PT Serif", serif;
+  font-size: 22px;
+  color: rgb(255, 255, 255);
+  align-self: flex-start;
+  margin-left: 27px;
+  margin-bottom: 10px;
+  margin-top: 70px;
+}
+.card__wrapper--profile .section__lower {
+  width: 315px;
+  display: flex;
+  flex-direction: row;
+}
+.card__wrapper--profile .section__lower .right,
+.card__wrapper--profile .section__lower .left {
+  width: 50%;
+}
+.card__wrapper--profile .section__lower .p__orderNumber {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.card__wrapper--profile .section__lower .dateOfPurchase {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin-bottom: 0;
+  margin-left: 107px;
+}
+.card__wrapper--profile .section__lower .total__sum--text {
+  font-family: "Work Sans", sans-serif;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  margin-top: 0;
+}
+.card__wrapper--profile .section__lower .summa__total {
+  font-family: "Work Sans", sans-serif;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  margin-top: 0;
+  margin-left: 120px;
+}
+.card__wrapper--profile .total__cost {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.card__wrapper--profile .total__cost__sum {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 153px;
+}
+.card__wrapper--profile .Thin__Line {
+  background-color: rgba(255, 255, 255, 0.08);
+  width: 100%;
+  height: 1px;
+}
+.card__wrapper--profile .Thic__Line {
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 315px;
+  height: 1px;
+}/*# sourceMappingURL=Profile.css.map */

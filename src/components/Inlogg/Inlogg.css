@@ -1,0 +1,119 @@
+.card__wrapper--inlogg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 667px;
+  width: 375px;
+  background-color: rgb(47, 41, 38);
+}
+.card__wrapper--inlogg .section__inlogg {
+  position: relative;
+  top: -20px;
+  height: 565.06px;
+  width: 341px;
+  background-color: rgb(243, 228, 225);
+  border-radius: 3px;
+}
+.card__wrapper--inlogg .logo__img {
+  color: rgb(47, 41, 38);
+  display: flex;
+  border-radius: 20px;
+  margin-left: 150px;
+  margin-top: 25px;
+}
+.card__wrapper--inlogg h3 {
+  font-family: "PT Serif", serif;
+  font-size: 32px;
+  text-align: center;
+  line-height: 38.4px;
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+.card__wrapper--inlogg p {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  line-height: 24px;
+  margin-top: 5px;
+  margin-bottom: 50px;
+  margin-left: 17px;
+  width: 305px;
+}
+.card__wrapper--inlogg form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card__wrapper--inlogg .named__form {
+  display: flex;
+  flex-direction: column;
+  width: 310px;
+}
+.card__wrapper--inlogg .named__form label {
+  font-family: "Work Sans", sans-serif;
+  font-size: 12px;
+  color: rgb(47, 41, 38);
+  margin-bottom: 5px;
+}
+.card__wrapper--inlogg form input {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 37px;
+  border-radius: 4px;
+  border-color: rgb(47, 41, 38);
+  background-color: rgb(243, 228, 225);
+}
+.card__wrapper--inlogg form input::-moz-placeholder {
+  color: rgb(47, 41, 38);
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  line-height: 19.2px;
+  padding: 12px;
+}
+.card__wrapper--inlogg form input::placeholder {
+  color: rgb(47, 41, 38);
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  line-height: 19.2px;
+  padding: 12px;
+}
+.card__wrapper--inlogg .email__form {
+  flex-direction: column;
+  width: 310px;
+}
+.card__wrapper--inlogg .email__form label {
+  font-family: "Work Sans", sans-serif;
+  font-size: 12px;
+  color: rgb(47, 41, 38);
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.card__wrapper--inlogg .gdpr {
+  display: flex;
+}
+.card__wrapper--inlogg .gdpr button {
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: rgb(14, 146, 125);
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.card__wrapper--inlogg .gdpr p {
+  font-family: "Work Sans", sans-serif;
+  font-size: 12px;
+  margin-top: 15px;
+  margin-right: 232px;
+}
+.card__wrapper--inlogg .inlogg__button {
+  display: flex;
+  justify-content: center;
+}
+.card__wrapper--inlogg .inlogg__button Button {
+  padding: 30px;
+  padding-top: 12px;
+  padding-bottom: 15px;
+}/*# sourceMappingURL=Inlogg.css.map */

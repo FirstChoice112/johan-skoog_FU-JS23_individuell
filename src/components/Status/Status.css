@@ -1,0 +1,49 @@
+.card__wrapper--status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 667px;
+  width: 375px;
+  background-color: rgb(229, 103, 78);
+  color: rgb(255, 255, 255);
+}
+.card__wrapper--status .orderNumber__text {
+  background-color: rgb(229, 103, 78);
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  margin-bottom: 50px;
+  margin-top: -100px;
+}
+.card__wrapper--status .orderNumber__text .orderNumber--number {
+  font-weight: 700;
+}
+.card__wrapper--status h3 {
+  height: 125px;
+  width: 279px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0;
+  font-family: "PT Serif", serif;
+  font-size: 36px;
+}
+.card__wrapper--status p {
+  font-family: "Work Sans", sans-serif;
+  font-size: 21px;
+  margin-top: 0;
+}
+.card__wrapper--status p .minutes {
+  font-size: 22px;
+  line-height: 26.4px;
+  font-weight: bolder;
+}
+.card__wrapper--status img {
+  width: 216.29px;
+  height: 119.06px;
+  background-color: rgb(229, 103, 78);
+}
+.card__wrapper--status .secondary {
+  margin-top: 120px;
+  padding: 10px 35px;
+}/*# sourceMappingURL=Status.css.map */

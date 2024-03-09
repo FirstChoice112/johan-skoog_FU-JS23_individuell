@@ -1,0 +1,41 @@
+.wrapper__header {
+  position: relative;
+  background-color: rgb(243, 228, 225);
+  width: 375px;
+  height: 113px;
+}
+.wrapper__header .shop__container {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+.wrapper__header .shop__container span {
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  left: 8px;
+}
+.wrapper__header .btn__burger,
+.wrapper__header .btn__cart {
+  position: absolute;
+  z-index: 1;
+  border-radius: 30px;
+  border: none;
+}
+.wrapper__header .btn__burger {
+  left: 16px;
+  top: 16px;
+  width: 48px;
+  height: 48px;
+}
+.wrapper__header .btn__cart {
+  right: 16px;
+  top: 16px;
+  background-color: #2f2926;
+  width: 60px;
+  height: 60px;
+}/*# sourceMappingURL=Header.css.map */

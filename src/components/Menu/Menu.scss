@@ -13,7 +13,7 @@
     font-family: "PT Serif", serif;
     font-weight: 700;
     font-size: 42px;
-    margin-top: -40px;
+    margin-top: -10px;
     display: flex;
     align-self: center;
     margin-bottom: 0;
@@ -40,6 +40,7 @@
   .section__menu--row {
     width: 311px;
     height: 64px;
+    padding-top: 20px;
   }
   .menu__button {
     padding: 0;

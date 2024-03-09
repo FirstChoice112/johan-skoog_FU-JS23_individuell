@@ -52,12 +52,10 @@ export default function Cart() {
               </div>
               <div className="rightSide__wrapper">
                 <button className="rightSide__btn">
-                  {" "}
                   <img src={Upp} />
                 </button>
                 <p className="rightSide__btn--quantity">4</p>
                 <button className="rightSide__btn">
-                  {" "}
                   <img src={Down} />
                 </button>
               </div>
@@ -65,10 +63,8 @@ export default function Cart() {
           </section>
 
           <div className="wrapper__total">
-            <h3>
-              Total <hr className="finale__line" />{" "}
-              <h3 className="total__cost">l343kr</h3>
-            </h3>
+            <h3>Total </h3> <hr className="finale__line" />
+            <h3 className="total__cost">l343kr</h3>
             <p>inkl moms + drönarleverans</p>
           </div>
           <div className="wrapper__button">

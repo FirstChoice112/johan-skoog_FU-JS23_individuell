@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap");
+.card__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 375px;
+  height: 655px;
+  position: relative;
+  background-color: rgb(56, 132, 109);
+  font-family: "Work Sans", sans-serif;
+}
+.card__wrapper .wrapper__image--left,
+.card__wrapper .wrapper__image--right {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.card__wrapper .wrapper__image--right {
+  display: flex;
+  justify-content: flex-end;
+}
+.card__wrapper .wrapper__image--left img,
+.card__wrapper .wrapper__image--right img {
+  height: 655px;
+  position: relative;
+}
+.card__wrapper .hero__section {
+  height: 149px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card__wrapper .hero__section .hero__symbol {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-color: rgb(76, 144, 123);
+  border-radius: 32px;
+  align-self: center;
+  padding: 10px;
+}
+.card__wrapper .hero__section h1 {
+  color: rgb(255, 255, 255);
+  font-family: "Rufina", serif;
+  font-size: 42px;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.card__wrapper .hero__section .hero__text {
+  font-family: "Work Sans", sans-serif;
+  font-size: 9px;
+  line-height: 10.56px;
+  color: rgb(255, 255, 255);
+  letter-spacing: 3px;
+}/*# sourceMappingURL=Landingpage.css.map */

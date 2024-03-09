@@ -1,0 +1,37 @@
+.card__wrapper--nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(47, 41, 38);
+  height: 667px;
+  width: 375px;
+}
+.card__wrapper--nav .button__icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgb(47, 41, 38);
+  border: none;
+}
+.card__wrapper--nav .section__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.card__wrapper--nav h3 {
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  font-size: 32px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.card__wrapper--nav .line__break {
+  width: 48px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+}/*# sourceMappingURL=Nav.css.map */

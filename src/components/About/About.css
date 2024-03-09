@@ -1,0 +1,54 @@
+.card__wrapper--about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(243, 228, 225);
+  height: 1061px;
+  width: 375px;
+  justify-content: space-between;
+  font-family: "PT Serif", serif;
+}
+.card__wrapper--about h2 {
+  font-size: 42px;
+  width: 311px;
+  margin-bottom: 0px;
+}
+.card__wrapper--about .section__text {
+  width: 311px;
+  height: 584px;
+}
+.card__wrapper--about .section__text--highlighted {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  line-height: 22.4px;
+  font-weight: 600;
+}
+.card__wrapper--about .section__text--normalText {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 19.2px;
+}
+.card__wrapper--about .section__founder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card__wrapper--about .section__founder--image {
+  width: 74px;
+  height: 74px;
+  background-color: rgb(243, 228, 225);
+  border-radius: 37px;
+}
+.card__wrapper--about .section__founder--name {
+  font-size: 22px;
+  line-height: 35.2px;
+  margin: 0;
+}
+.card__wrapper--about .section__founder--workrole {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 19.2px;
+  margin: 0;
+}/*# sourceMappingURL=About.css.map */
