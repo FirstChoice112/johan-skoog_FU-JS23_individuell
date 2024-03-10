@@ -41,6 +41,7 @@
     width: 311px;
     height: 64px;
     padding-top: 20px;
+    margin-left: 15px;
   }
   .menu__button {
     padding: 0;
@@ -57,5 +58,12 @@
     flex-direction: column;
     align-items: flex-end;
     margin-top: -45px;
+    margin-left: 252px;
   }
+  // .dotted--line {
+  //   border: 1px dotted rgba(0, 0, 0, 0.185);
+  //   width: 40px;
+  //   margin-top: -5px;
+  //   margin-left: 150px;
+  // }
 }

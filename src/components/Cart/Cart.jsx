@@ -12,6 +12,7 @@ export default function Cart() {
       <div className="card__wrapper--cart">
         <Header backgroundColor=" rgb(47, 41, 38, 0.7)" />
         <div className="cart__wrapper">
+          <div className="triangle"></div>
           <h2>Din beställning</h2>
           <section>
             <div className="orderline">
