@@ -1,6 +1,7 @@
 import Button from "../Button/Button";
 import Status_Drone from "../../assets/images/Status/Status_Drone.png";
 import "./Status.scss";
+import { Link } from "react-router-dom";
 
 export default function Status() {
   return (
@@ -14,7 +15,9 @@ export default function Status() {
         <p>
           <span className="minutes">13</span> minuter
         </p>
-        <Button buttontext="Ok, cool!" buttonStyle="secondary" />
+        <Link to="/" className="link">
+          <Button buttontext="Ok, cool!" buttonStyle="secondary" />
+        </Link>
       </div>
     </>
   );

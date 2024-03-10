@@ -3,8 +3,11 @@ import Header from "../Header/Header";
 import Upp from "../../assets/images/Cart/Upp.svg";
 import Down from "../../assets/images/Cart/Down.svg";
 import "./Cart.scss";
+import useCounterStore from "../../store/Store";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
+  const { increment, decrement } = useCounterStore();
   return (
     <>
       <div className="card__wrapper--cart">
@@ -19,11 +22,11 @@ export default function Cart() {
               <p>98 kr</p>
               <div className="rightSide__wrapper">
                 <button className="rightSide__btn">
-                  <img src={Upp} />
+                  <img src={Upp} onClick={increment} />
                 </button>
                 <p className="rightSide__btn--quantity">2</p>
                 <button className="rightSide__btn">
-                  <img src={Down} />
+                  <img src={Down} onClick={decrement} />
                 </button>
               </div>
             </div>
@@ -36,11 +39,11 @@ export default function Cart() {
               </div>
               <div className="rightSide__wrapper">
                 <button className="rightSide__btn">
-                  <img src={Upp} />
+                  <img src={Upp} onClick={increment} />
                 </button>
                 <p className="rightSide__btn--quantity">1</p>
                 <button className="rightSide__btn">
-                  <img src={Down} />
+                  <img src={Down} onClick={decrement} />
                 </button>
               </div>
             </div>
@@ -53,11 +56,11 @@ export default function Cart() {
               </div>
               <div className="rightSide__wrapper">
                 <button className="rightSide__btn">
-                  <img src={Upp} />
+                  <img src={Upp} onClick={increment} />
                 </button>
                 <p className="rightSide__btn--quantity">4</p>
                 <button className="rightSide__btn">
-                  <img src={Down} />
+                  <img src={Down} onClick={decrement} />
                 </button>
               </div>
             </div>
@@ -69,7 +72,9 @@ export default function Cart() {
             <p>inkl moms + drönarleverans</p>
           </div>
           <div className="wrapper__button">
-            <Button buttontext="Take my money!" />
+            <Link to="/Status" className="link">
+              <Button buttontext="Take my money!" />
+            </Link>
           </div>
         </div>
       </div>

@@ -107,11 +107,14 @@
   .inlogg__button {
     display: flex;
     justify-content: center;
-
+    .link {
+      text-decoration: none;
+    }
     Button {
       padding: 30px;
       padding-top: 12px;
       padding-bottom: 15px;
+      cursor: pointer;
     }
   }
 }
