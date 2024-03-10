@@ -6,6 +6,7 @@ import Cart from "./components/Cart/Cart";
 import Status from "./components/Status/Status";
 import Inlogg from "./components/Inlogg/Inlogg";
 import Profile from "./components/Profile/Profile";
+import ErrorPage from "./pages/ErrorPage.tsx/ErrorPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Status />
       <Inlogg />
       <Profile />
+      <ErrorPage />
     </>
   );
 }
