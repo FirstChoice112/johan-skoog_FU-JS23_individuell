@@ -77,7 +77,9 @@ function MenuItem({ menuItem, onClick }) {
       <button className="menu__button" onClick={onClick}>
         <img src={Menu_Button} alt="Menu Button" />
       </button>
-      <span className="menu__product--name">{menuItem.title}</span>
+      <span className="menu__product--name">
+        {menuItem.title} <div className="dotted--line"></div>
+      </span>
       <span className="menu__product--description">{menuItem.desc}</span>
       <span className="menu__product--price">{menuItem.price} Kr</span>
     </div>

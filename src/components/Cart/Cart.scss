@@ -17,6 +17,23 @@
   position: absolute;
   margin-top: 75px;
 
+  .triangel {
+    position: relative;
+  }
+  .triangle::after {
+    content: "";
+    position: absolute;
+    margin-left: 299px;
+    margin-top: -25px;
+    border-width: 15px;
+    border-style: solid;
+    border-top-color: white;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(180deg);
+    z-index: 9999;
+  }
   h2 {
     font-family: "PT Serif", serif;
     font-size: 32px;
@@ -71,10 +88,11 @@
     margin-bottom: 30px;
   }
   .finale__line {
+    border: 1px dotted rgba(0, 0, 0, 0.185);
     margin-right: 75px;
     margin-left: 60px;
     margin-top: -5px;
-    width: 200px;
+    width: 195px;
   }
   .total__cost {
     display: flex;
@@ -87,9 +105,9 @@
     justify-content: center;
   }
   .dotted__line {
-    height: 0.2px;
-    width: 150px;
-    margin-left: 120px;
+    border: 1px dotted rgba(0, 0, 0, 0.185);
+    margin-left: 115px;
+    width: 160px;
     margin-top: -7px;
   }
 }
