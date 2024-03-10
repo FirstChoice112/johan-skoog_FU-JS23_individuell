@@ -2,6 +2,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import About_Eva from "../../assets/images/About/About_Eva.jpg";
 import "./About.scss";
+
 export default function About() {
   return (
     <>

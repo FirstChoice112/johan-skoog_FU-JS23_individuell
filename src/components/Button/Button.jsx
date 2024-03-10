@@ -11,7 +11,8 @@ export default function Button({ buttontext, buttonStyle }) {
   );
 }
 
+//PropTypes för att definiera typen av buttonText
 Button.propTypes = {
   buttontext: PropTypes.string.isRequired,
-  buttonStyle: PropTypes.string, // Använda PropTypes för att definiera typen av buttonText
+  buttonStyle: PropTypes.string,
 };

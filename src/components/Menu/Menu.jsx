@@ -8,23 +8,28 @@ import useCounterStore from "../../store/Store";
 
 const BASE_URL = "https://airbean-api-xjlcn.ondigitalocean.app/api/beans/";
 
+//Function för api fetch
 export default function FetchMenu() {
+  //deklarera tillståndsvariabeln och function
   const [menuItems, setMenuItems] = useState([]);
 
+  // useEffect körs när sidan renderar
   useEffect(() => {
+    //async function för fetch
     const fetchMenuItems = async () => {
       try {
         const response = await fetch(BASE_URL);
-
+        //Error
         if (!response.ok) {
           throw new Error("Failed to fetch menu items");
         }
-
+        //konvertera svaret från servern till JSon format
         const data = await response.json();
+        //Kontrollera om datan är en en giltid Array
         if (!Array.isArray(data.menu)) {
           throw new Error("Menu items data is not valid");
         }
-
+        //Uppdatera menuItems med menyobjektet som hämtas
         setMenuItems(data.menu);
       } catch (error) {
         console.error("Error fetching menu items:", error);
@@ -33,13 +38,14 @@ export default function FetchMenu() {
 
     fetchMenuItems();
   }, []);
-
+  //Använder slice för att ta bort en del av fetchen
   return <Menu menuItems={menuItems.slice(0, 6)} />;
 }
 
+//Function för att ta emot menuItems och rendera dem
 function Menu({ menuItems }) {
+  //Count Hook för + knappen
   const incrementCount = useCounterStore((state) => state.increment);
-
   const handleButtonClick = () => {
     incrementCount();
   };
@@ -50,6 +56,7 @@ function Menu({ menuItems }) {
       <h2>Meny</h2>
       <br />
       <section>
+        {/* Använder map för att gå igenom varje object i MenuItems. Renderar en MenuItem komponent för varje object */}
         {menuItems.map((menuItem, index) => (
           <MenuItem
             key={index}
@@ -63,6 +70,7 @@ function Menu({ menuItems }) {
   );
 }
 
+//Function för att rendera ut Menyraderna
 function MenuItem({ menuItem, onClick }) {
   return (
     <div className="section__menu--row">
