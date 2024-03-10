@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 export default function Cart() {
   const { increment, decrement } = useCounterStore();
-  const { increment, decrement } = useCounterStore();
+
   return (
     <>
       <div className="card__wrapper--cart">
