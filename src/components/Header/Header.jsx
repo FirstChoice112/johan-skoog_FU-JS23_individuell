@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import useCounterStore from "../../store/Store";
 
 export default function Header({ backgroundColor }) {
+  //Hämta in Count hooken
   const count = useCounterStore((state) => state.count);
 
   return (
