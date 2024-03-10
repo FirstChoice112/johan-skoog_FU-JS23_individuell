@@ -2,11 +2,12 @@ import "./Landingpage.scss";
 import Landing_Left from "../../assets/images/Landing/Left__Landing.png";
 import Landing_Rigth from "../../assets/images/Landing/Right__Landing.png";
 import Symbol from "../../assets/images/Landing/Symbol.png";
+import { Link } from "react-router-dom";
 
 export default function LandingPage() {
   return (
     <>
-      <div className="card__wrapper">
+      <Link to="/Nav" className="card__wrapper">
         <section className="hero__section">
           <div className="hero__symbol">
             <img src={Symbol} alt="logo Image" />
@@ -20,7 +21,7 @@ export default function LandingPage() {
         <section className="wrapper__image--right">
           <img src={Landing_Rigth} alt="Right Landing" />
         </section>
-      </div>
+      </Link>
     </>
   );
 }

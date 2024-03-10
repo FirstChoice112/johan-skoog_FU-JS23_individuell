@@ -2,6 +2,7 @@ import Button from "../Button/Button";
 import Header from "../Header/Header";
 import Profile_inlogg from "../../assets/images/Profile/Profile_Inlogg.jpg";
 import "./Inlogg.scss";
+import { Link } from "react-router-dom";
 
 export default function Inlogg() {
   return (
@@ -39,7 +40,9 @@ export default function Inlogg() {
             <button></button> <p>GDPR Ok!</p>
           </div>
           <div className="inlogg__button">
-            <Button buttontext="Brew me a cup!" />
+            <Link to="/Profile" className="link">
+              <Button buttontext="Brew me a cup!" />
+            </Link>
           </div>
         </section>
       </div>

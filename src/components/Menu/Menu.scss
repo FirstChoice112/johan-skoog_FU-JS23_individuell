@@ -48,6 +48,7 @@
     border: none;
     background-color: $PrimaryBackround;
     margin-top: -50px;
+    cursor: pointer;
   }
   .menu__product--price {
     font-family: "PT Serif", serif;
@@ -60,10 +61,4 @@
     margin-top: -45px;
     margin-left: 252px;
   }
-  // .dotted--line {
-  //   border: 1px dotted rgba(0, 0, 0, 0.185);
-  //   width: 40px;
-  //   margin-top: -5px;
-  //   margin-left: 150px;
-  // }
 }
