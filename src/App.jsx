@@ -7,26 +7,7 @@ import Status from "./components/Status/Status";
 import Inlogg from "./components/Inlogg/Inlogg";
 import Profile from "./components/Profile/Profile";
 import ErrorPage from "./pages/ErrorPage.tsx/ErrorPage";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  // Link,
-  // createBrowserRouter,
-  // RouterProvider,
-} from "react-router-dom";
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <LandingPage />,
-//     errorElement: <ErrorPage />,
-//   },
-//   {
-//     path: "/Nav",
-//     element: <Nav />,
-//   },
-// ]);
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (

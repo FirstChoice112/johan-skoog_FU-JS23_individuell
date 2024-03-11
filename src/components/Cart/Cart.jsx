@@ -24,11 +24,9 @@ export default function Cart() {
               <div className="rightSide__wrapper">
                 <button className="rightSide__btn">
                   <img src={Upp} onClick={increment} />
-                  <img src={Upp} onClick={increment} />
                 </button>
                 <p className="rightSide__btn--quantity">2</p>
                 <button className="rightSide__btn">
-                  <img src={Down} onClick={decrement} />
                   <img src={Down} onClick={decrement} />
                 </button>
               </div>
@@ -43,11 +41,9 @@ export default function Cart() {
               <div className="rightSide__wrapper">
                 <button className="rightSide__btn">
                   <img src={Upp} onClick={increment} />
-                  <img src={Upp} onClick={increment} />
                 </button>
                 <p className="rightSide__btn--quantity">1</p>
                 <button className="rightSide__btn">
-                  <img src={Down} onClick={decrement} />
                   <img src={Down} onClick={decrement} />
                 </button>
               </div>
@@ -62,11 +58,9 @@ export default function Cart() {
               <div className="rightSide__wrapper">
                 <button className="rightSide__btn">
                   <img src={Upp} onClick={increment} />
-                  <img src={Upp} onClick={increment} />
                 </button>
                 <p className="rightSide__btn--quantity">4</p>
                 <button className="rightSide__btn">
-                  <img src={Down} onClick={decrement} />
                   <img src={Down} onClick={decrement} />
                 </button>
               </div>
