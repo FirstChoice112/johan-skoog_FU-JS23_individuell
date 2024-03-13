@@ -9,10 +9,11 @@ import { useMyContext } from "../../../contexts/AppContext";
 //Function för att ta emot menuItems och rendera dem
 export default function Menu() {
   const { menuItems, handleAddToCart } = useMyContext();
-
   //Count Hook för + knappen
   const incrementCount = useCounterStore((state) => state.increment);
-
+  if (!menuItems) {
+    return <div>Loading...</div>;
+  }
   const handleButtonClick = (menuItem) => {
     incrementCount();
     handleAddToCart(menuItem); // Skicka endast id, title och price till handleAddToCart
