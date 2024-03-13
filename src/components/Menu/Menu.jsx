@@ -31,7 +31,7 @@ export default function Menu() {
             key={index}
             menuItem={menuItem}
             onClick={handleButtonClick}
-            handleAddToCart={handleAddToCart} // Uppdatera här
+            handleAddToCart={handleAddToCart}
           />
         ))}
       </section>
