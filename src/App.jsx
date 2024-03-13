@@ -8,23 +8,26 @@ import Inlogg from "./components/Inlogg/Inlogg";
 import Profile from "./components/Profile/Profile";
 import ErrorPage from "./pages/ErrorPage.tsx/ErrorPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { MyContextProvider } from "../contexts/AppContext";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<LandingPage />} />
-          <Route path="/Nav" element={<Nav />} />
-          <Route path="/Menu" element={<Menu />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Cart" element={<Cart />} />
-          <Route path="/Status" element={<Status />} />
-          <Route path="/Inlogg" element={<Inlogg />} />
-          <Route path="/Profile" element={<Profile />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </BrowserRouter>
+      <MyContextProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<LandingPage />} />
+            <Route path="/Nav" element={<Nav />} />
+            <Route path="/Menu" element={<Menu />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Cart" element={<Cart />} />
+            <Route path="/Status" element={<Status />} />
+            <Route path="/Inlogg" element={<Inlogg />} />
+            <Route path="/Profile" element={<Profile />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </BrowserRouter>
+      </MyContextProvider>
     </>
   );
 }
