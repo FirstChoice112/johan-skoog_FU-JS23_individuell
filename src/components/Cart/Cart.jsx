@@ -6,12 +6,13 @@ import Upp from "../../assets/images/Cart/Upp.svg";
 import Down from "../../assets/images/Cart/Down.svg";
 import "./Cart.scss";
 import useCounterStore from "../../store/Store";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMyContext } from "../../../contexts/AppContext";
 
 export default function Cart() {
   const { cartItems } = useMyContext();
   const [itemQuantities, setItemQuantities] = useState({});
+  const navigate = useNavigate();
 
   const getTotalCost = () => {
     let total = 0;
@@ -29,7 +30,6 @@ export default function Cart() {
     const updatedQuantities = { ...itemQuantities };
     updatedQuantities[index] = (updatedQuantities[index] || 0) + 1;
     setItemQuantities(updatedQuantities);
-
     // Lägg till priset på det nya objektet till den totala kostnaden
     const newItemPrice = cartItems[index].price;
     getTotalCost((prevTotalCost) => prevTotalCost + newItemPrice);
@@ -46,6 +46,22 @@ export default function Cart() {
       const updatedCartItems = [...cartItems];
       updatedCartItems.splice(index, 1);
       setCartItems(updatedCartItems);
+    }
+  };
+  const handleTakeMyMoney = (event) => {
+    //Förhindra Link komponenten att gå vidare
+    event.preventDefault();
+    // Om varukorgen är tom --> visa felmeddelande
+    console.log("Cart items length:", cartItems.length);
+    if (cartItems.length === 0) {
+      console.log("Varukorgen är tom!");
+      alert(
+        "Varukorgen är tom! Lägg till något om du vill genomföra ett köp :)"
+      );
+    } else {
+      // Annars navigera till Status-komponenten
+      console.log("Navigera till Status-komponenten");
+      navigate("/Status");
     }
   };
 
@@ -94,7 +110,7 @@ export default function Cart() {
           <p>inkl moms + drönarleverans</p>
         </div>
         <div className="wrapper__button">
-          <Link to="/Status" className="link">
+          <Link to="/Status" className="link" onClick={handleTakeMyMoney}>
             <Button buttontext="Take my money!" />
           </Link>
         </div>
