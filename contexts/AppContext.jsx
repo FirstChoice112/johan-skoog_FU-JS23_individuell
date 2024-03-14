@@ -8,17 +8,15 @@ export const useMyContext = () => useContext(MyContext);
 export const MyContextProvider = ({ children }) => {
   const [menuItems, setMenuItems] = useState([]);
   const [cartItems, setCartItems] = useState([]);
-  const [responseData, setResponseData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [orderStatus, setOrderStatus] = useState({});
 
   const BASE_URL = "https://airbean-api-xjlcn.ondigitalocean.app/api/beans/";
 
   const handleAddToCart = (menuItem) => {
     // setSelectedMenuItem(menuItem);
     setCartItems((prevCartItems) => [...prevCartItems, menuItem]);
-    console.log("Added to cart:", menuItem.title, menuItem.price);
-    console.log("Cart items:", cartItems);
   };
 
   useEffect(() => {
@@ -44,60 +42,57 @@ export const MyContextProvider = ({ children }) => {
     })();
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      setError(null);
+  const fetchOrderStatus = async () => {
+    setIsLoading(true);
+    setError(null);
 
-      try {
-        const orderDetails = cartItems.map((item) => ({
-          name: item.title,
-          price: item.price,
-        }));
+    try {
+      const orderDetails = cartItems.map((item) => ({
+        name: item.title,
+        price: item.price,
+      }));
 
-        const requestBody = {
-          details: {
-            order: orderDetails,
+      const requestBody = {
+        details: {
+          order: orderDetails,
+        },
+      };
+
+      const response = await fetch(
+        "https://airbean-api-xjlcn.ondigitalocean.app/api/beans/order",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
           },
-        };
-
-        const response = await fetch(
-          "https://airbean-api-xjlcn.ondigitalocean.app/api/beans/order",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(requestBody),
-          }
-        );
-
-        const data = await response.json();
-        console.log("Response Data:", data);
-        if (!response.ok) {
-          throw new Error(data.error);
+          body: JSON.stringify(requestBody),
         }
+      );
 
-        setResponseData(data);
-        console.log("Response Data:", data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setIsLoading(false);
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error);
       }
-    };
 
-    fetchData();
-  }, [cartItems]);
+      setOrderStatus(data);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const values = {
     menuItems,
     setMenuItems,
     handleAddToCart,
     cartItems,
-    responseData,
     isLoading,
     error,
+    orderStatus,
+    setOrderStatus,
+    fetchOrderStatus,
   };
   return <MyContext.Provider value={values}>{children}</MyContext.Provider>;
 };

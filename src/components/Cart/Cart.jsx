@@ -10,7 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useMyContext } from "../../../contexts/AppContext";
 
 export default function Cart() {
-  const { cartItems, responseData } = useMyContext();
+  const { cartItems, fetchOrderStatus } = useMyContext();
   const [itemQuantities, setItemQuantities] = useState({});
   const navigate = useNavigate();
 
@@ -49,23 +49,17 @@ export default function Cart() {
     }
   };
 
-  const handleTakeMyMoney = (event) => {
+  const handleTakeMyMoney = async (event) => {
     event.preventDefault();
+
     if (cartItems.length === 0) {
       alert(
         "Varukorgen är tom! Lägg till något om du vill genomföra ett köp :)"
       );
-    } else {
-      if (responseData) {
-        //Extrahera eta och ordernr
-        const { eta, orderNr } = responseData;
-        console.log("ETA:", eta);
-        console.log("Order Number:", orderNr);
-      } else {
-        console.log("Response data is not available yet.");
-      }
-      navigate("/Status"); // Navigate to Status page regardless of responseData availability
+      return;
     }
+    await fetchOrderStatus();
+    navigate("/Status");
   };
 
   return (
@@ -113,7 +107,11 @@ export default function Cart() {
           <p>inkl moms + drönarleverans</p>
         </div>
         <div className="wrapper__button">
-          <Link to="/Status" className="link" onClick={handleTakeMyMoney}>
+          <Link
+            to="/Status"
+            className="link"
+            onClick={(event) => handleTakeMyMoney(event)}
+          >
             <Button buttontext="Take my money!" />
           </Link>
         </div>
