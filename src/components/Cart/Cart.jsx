@@ -46,9 +46,8 @@ export default function Cart() {
     }
     // Om kvantiteten blir 0, ta bort produkten från kundvagnen
     if (updatedQuantities[index] === 0) {
-      const updatedCartItems = [...cartItems];
-      updatedCartItems.splice(index, 1);
-      setCartItems(updatedCartItems);
+      // Anropa removeFromCart med index för att ta bort produkten
+      removeFromCart(index);
     }
   };
   //Async function som kollar att det fiunns varor i Cart innan den går till Status

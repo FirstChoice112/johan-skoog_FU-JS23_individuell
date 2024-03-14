@@ -18,6 +18,11 @@ export const MyContextProvider = ({ children }) => {
     // Lägg till från meny till cart
     setCartItems((prevCartItems) => [...prevCartItems, menuItem]);
   };
+  const removeFromCart = (index) => {
+    setCartItems((prevCartItems) => {
+      return prevCartItems.filter((item, i) => i !== index);
+    });
+  };
 
   useEffect(() => {
     //IFFE - Imediatly invoked function expression
@@ -95,6 +100,7 @@ export const MyContextProvider = ({ children }) => {
     orderStatus,
     setOrderStatus,
     fetchOrderStatus,
+    removeFromCart,
   };
   return <MyContext.Provider value={values}>{children}</MyContext.Provider>;
 };
