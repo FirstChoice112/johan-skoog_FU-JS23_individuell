@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { useState } from "react";
 import Button from "../Button/Button";
 import Header from "../Header/Header";
@@ -10,47 +9,42 @@ import { Link, useNavigate } from "react-router-dom";
 import { useMyContext } from "../../../contexts/AppContext";
 
 export default function Cart() {
-  //Hämta från AppContext
   const { cartItems, fetchOrderStatus } = useMyContext();
-  //State för antalet produkter i Cart
   const [itemQuantities, setItemQuantities] = useState({});
-  //Navigeringsfunktion för att skicka eta och ordernr till cart
+
   const navigate = useNavigate();
-  //Beräknar totalcost
+
   const getTotalCost = () => {
     let total = 0;
     cartItems.forEach((item, index) => {
       const quantity = itemQuantities[index] || 0;
-      // Lägg till priset för varje produkt multiplicerat med kvantiteten
       total += item.price * quantity;
-      // Lägg till priset för varje produkt
       total += item.price;
     });
     return total;
   };
-  //Hantera varukorgen på upp knappen
+
   const handleIncrement = (index) => {
     const updatedQuantities = { ...itemQuantities };
     updatedQuantities[index] = (updatedQuantities[index] || 0) + 1;
     setItemQuantities(updatedQuantities);
-    // Lägg till priset på det nya objektet till den totala kostnaden
     const newItemPrice = cartItems[index].price;
     getTotalCost((prevTotalCost) => prevTotalCost + newItemPrice);
+    useCounterStore.getState().increment();
   };
-  //Hantera varukorgen på ner knappen
+
   const handleDecrement = (index) => {
     const updatedQuantities = { ...itemQuantities };
     if (updatedQuantities[index] > 0) {
       updatedQuantities[index] -= 1;
       setItemQuantities(updatedQuantities);
     }
-    // Om kvantiteten blir 0, ta bort produkten från kundvagnen
     if (updatedQuantities[index] === 0) {
-      // Anropa removeFromCart med index för att ta bort produkten
-      removeFromCart(index);
+      // removeFromCart(index);
     }
+    useCounterStore.getState().decrement();
   };
-  //Async function som kollar att det fiunns varor i Cart innan den går till Status
+
   const handleTakeMyMoney = async (event) => {
     event.preventDefault();
     if (cartItems.length === 0) {
@@ -59,7 +53,6 @@ export default function Cart() {
       );
       return;
     }
-    //Skicka eta och ordernr till Status
     await fetchOrderStatus();
     navigate("/Status");
   };
@@ -79,22 +72,16 @@ export default function Cart() {
               <div className="rightSide__wrapper">
                 <button
                   className="rightSide__btn"
-                  onClick={() => {
-                    handleIncrement(index);
-                    useCounterStore.getState().increment();
-                  }}
+                  onClick={() => handleIncrement(index)}
                 >
                   <img src={Upp} alt="Increase" />
                 </button>
                 <p className="rightSide__btn--quantity">
-                  {itemQuantities[index] || 1}
+                  {(itemQuantities[index] || 0) + 1}
                 </p>
                 <button
                   className="rightSide__btn"
-                  onClick={() => {
-                    handleDecrement(index);
-                    useCounterStore.getState().decrement();
-                  }}
+                  onClick={() => handleDecrement(index)}
                 >
                   <img src={Down} alt="Decrease" />
                 </button>
@@ -104,7 +91,8 @@ export default function Cart() {
         </section>
 
         <div className="wrapper__total">
-          <h3>Total </h3> <hr className="finale__line" />
+          <h3>Total </h3>
+          <hr className="finale__line" />
           <h3 className="total__cost">{getTotalCost()} kr</h3>
           <p>inkl moms + drönarleverans</p>
         </div>
