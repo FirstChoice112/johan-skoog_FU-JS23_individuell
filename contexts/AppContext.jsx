@@ -8,7 +8,9 @@ export const useMyContext = () => useContext(MyContext);
 export const MyContextProvider = ({ children }) => {
   const [menuItems, setMenuItems] = useState([]);
   const [cartItems, setCartItems] = useState([]);
-
+  const [responseData, setResponseData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   const BASE_URL = "https://airbean-api-xjlcn.ondigitalocean.app/api/beans/";
 
   const handleAddToCart = (menuItem) => {
@@ -19,7 +21,7 @@ export const MyContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    //IFFE - Imediatly invoked function
+    //IFFE - Imediatly invoked function expression
     (async function () {
       try {
         const response = await fetch(BASE_URL);
@@ -41,11 +43,60 @@ export const MyContextProvider = ({ children }) => {
     })();
   }, []);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      setError(null);
+
+      try {
+        const requestBody = {
+          details: {
+            order: [
+              {
+                name: "Example Item",
+                price: 10,
+              },
+            ],
+          },
+        };
+
+        const response = await fetch(
+          "https://airbean-api-xjlcn.ondigitalocean.app/api/beans/order",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(requestBody),
+          }
+        );
+
+        const data = await response.json();
+        console.log("Response Data:", data);
+        if (!response.ok) {
+          throw new Error(data.error);
+        }
+
+        setResponseData(data);
+        console.log("Response Data:", data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const values = {
     menuItems,
     setMenuItems,
     handleAddToCart,
     cartItems,
+    responseData,
+    isLoading,
+    error,
   };
   return <MyContext.Provider value={values}>{children}</MyContext.Provider>;
 };

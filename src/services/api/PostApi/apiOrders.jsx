@@ -1,77 +1,77 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
-function MyComponent() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [responseData, setResponseData] = useState(null);
+// function MyComponent() {
+//   const [isLoading, setIsLoading] = useState(false);
+//   const [error, setError] = useState(null);
+//   const [responseData, setResponseData] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      setError(null);
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       setIsLoading(true);
+//       setError(null);
 
-      try {
-        const requestBody = {
-          details: {
-            order: [
-              {
-                name: "Example Item",
-                price: 10,
-              },
-            ],
-          },
-        };
+//       try {
+//         const requestBody = {
+//           details: {
+//             order: [
+//               {
+//                 name: "Example Item",
+//                 price: 10,
+//               },
+//             ],
+//           },
+//         };
 
-        const response = await fetch(
-          "https://airbean-api-xjlcn.ondigitalocean.app/api/beans/order",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(requestBody),
-          }
-        );
+//         const response = await fetch(
+//           "https://airbean-api-xjlcn.ondigitalocean.app/api/beans/order",
+//           {
+//             method: "POST",
+//             headers: {
+//               "Content-Type": "application/json",
+//             },
+//             body: JSON.stringify(requestBody),
+//           }
+//         );
 
-        const data = await response.json();
+//         const data = await response.json();
+//         console.log("Response Data:", data);
+//         if (!response.ok) {
+//           throw new Error(data.error);
+//         }
 
-        if (!response.ok) {
-          throw new Error(data.error);
-        }
+//         setResponseData(data);
+//         console.log("Response Data:", data);
+//       } catch (error) {
+//         setError(error.message);
+//       } finally {
+//         setIsLoading(false);
+//       }
+//     };
 
-        setResponseData(data);
-        console.log("Response Data:", data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+//     fetchData();
+//   }, []);
 
-    fetchData();
-  }, []);
+//   if (isLoading) {
+//     return <div>Loading...</div>;
+//   }
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+//   if (error) {
+//     return <div>Error: {error}</div>;
+//   }
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+//   if (!responseData) {
+//     return null;
+//   }
 
-  if (!responseData) {
-    return null;
-  }
+//   return (
+//     <div>
+//       <h2>Response Data:</h2>
+//       <pre>{JSON.stringify(responseData, null, 2)}</pre>
+//     </div>
+//   );
+// }
 
-  return (
-    <div>
-      <h2>Response Data:</h2>
-      <pre>{JSON.stringify(responseData, null, 2)}</pre>
-    </div>
-  );
-}
-
-export default MyComponent;
+// export default MyComponent;
 
 // {
 //     "details": {
@@ -91,3 +91,5 @@ export default MyComponent;
 //     "success": true,
 //     "error": "string"
 //   }
+
+//Används i AppContext!
