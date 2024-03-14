@@ -10,7 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useMyContext } from "../../../contexts/AppContext";
 
 export default function Cart() {
-  const { cartItems } = useMyContext();
+  const { cartItems, responseData } = useMyContext();
   const [itemQuantities, setItemQuantities] = useState({});
   const navigate = useNavigate();
 
@@ -48,20 +48,23 @@ export default function Cart() {
       setCartItems(updatedCartItems);
     }
   };
+
   const handleTakeMyMoney = (event) => {
-    //Förhindra Link komponenten att gå vidare
     event.preventDefault();
-    // Om varukorgen är tom --> visa felmeddelande
-    console.log("Cart items length:", cartItems.length);
     if (cartItems.length === 0) {
-      console.log("Varukorgen är tom!");
       alert(
         "Varukorgen är tom! Lägg till något om du vill genomföra ett köp :)"
       );
     } else {
-      // Annars navigera till Status-komponenten
-      console.log("Navigera till Status-komponenten");
-      navigate("/Status");
+      if (responseData) {
+        //Extrahera eta och ordernr
+        const { eta, orderNr } = responseData;
+        console.log("ETA:", eta);
+        console.log("Order Number:", orderNr);
+      } else {
+        console.log("Response data is not available yet.");
+      }
+      navigate("/Status"); // Navigate to Status page regardless of responseData availability
     }
   };
 

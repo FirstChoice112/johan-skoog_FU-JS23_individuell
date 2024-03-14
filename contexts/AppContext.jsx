@@ -11,6 +11,7 @@ export const MyContextProvider = ({ children }) => {
   const [responseData, setResponseData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+
   const BASE_URL = "https://airbean-api-xjlcn.ondigitalocean.app/api/beans/";
 
   const handleAddToCart = (menuItem) => {
@@ -49,14 +50,14 @@ export const MyContextProvider = ({ children }) => {
       setError(null);
 
       try {
+        const orderDetails = cartItems.map((item) => ({
+          name: item.title,
+          price: item.price,
+        }));
+
         const requestBody = {
           details: {
-            order: [
-              {
-                name: "Example Item",
-                price: 10,
-              },
-            ],
+            order: orderDetails,
           },
         };
 
@@ -87,7 +88,7 @@ export const MyContextProvider = ({ children }) => {
     };
 
     fetchData();
-  }, []);
+  }, [cartItems]);
 
   const values = {
     menuItems,
