@@ -15,7 +15,7 @@ export const MyContextProvider = ({ children }) => {
   const BASE_URL = "https://airbean-api-xjlcn.ondigitalocean.app/api/beans/";
 
   const handleAddToCart = (menuItem) => {
-    // setSelectedMenuItem(menuItem);
+    // Lägg till från meny till cart
     setCartItems((prevCartItems) => [...prevCartItems, menuItem]);
   };
 
@@ -42,6 +42,7 @@ export const MyContextProvider = ({ children }) => {
     })();
   }, []);
 
+  //Hämtar eta och ordernr beroende på object i varukorgen
   const fetchOrderStatus = async () => {
     setIsLoading(true);
     setError(null);
@@ -83,6 +84,7 @@ export const MyContextProvider = ({ children }) => {
     }
   };
 
+  //Values som jag kan använda globalt!
   const values = {
     menuItems,
     setMenuItems,

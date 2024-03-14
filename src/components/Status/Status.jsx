@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useMyContext } from "../../../contexts/AppContext";
 
 export default function Status() {
+  //Plocka in orderstatus från AppContext
   const { orderStatus } = useMyContext();
 
   return (

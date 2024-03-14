@@ -10,10 +10,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useMyContext } from "../../../contexts/AppContext";
 
 export default function Cart() {
+  //Hämta från AppContext
   const { cartItems, fetchOrderStatus } = useMyContext();
+  //State för antalet produkter i Cart
   const [itemQuantities, setItemQuantities] = useState({});
+  //Navigeringsfunktion för att skicka eta och ordernr till cart
   const navigate = useNavigate();
-
+  //Beräknar totalcost
   const getTotalCost = () => {
     let total = 0;
     cartItems.forEach((item, index) => {
@@ -25,7 +28,7 @@ export default function Cart() {
     });
     return total;
   };
-
+  //Hantera varukorgen på upp knappen
   const handleIncrement = (index) => {
     const updatedQuantities = { ...itemQuantities };
     updatedQuantities[index] = (updatedQuantities[index] || 0) + 1;
@@ -34,7 +37,7 @@ export default function Cart() {
     const newItemPrice = cartItems[index].price;
     getTotalCost((prevTotalCost) => prevTotalCost + newItemPrice);
   };
-
+  //Hantera varukorgen på ner knappen
   const handleDecrement = (index) => {
     const updatedQuantities = { ...itemQuantities };
     if (updatedQuantities[index] > 0) {
@@ -48,16 +51,16 @@ export default function Cart() {
       setCartItems(updatedCartItems);
     }
   };
-
+  //Async function som kollar att det fiunns varor i Cart innan den går till Status
   const handleTakeMyMoney = async (event) => {
     event.preventDefault();
-
     if (cartItems.length === 0) {
       alert(
         "Varukorgen är tom! Lägg till något om du vill genomföra ett köp :)"
       );
       return;
     }
+    //Skicka eta och ordernr till Status
     await fetchOrderStatus();
     navigate("/Status");
   };
